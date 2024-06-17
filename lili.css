@@ -1,0 +1,40 @@
+.hp.lili>div:not(.lost) {
+    background: url('official1.png');
+    box-shadow: none;
+    border: none;
+    background-size: 105% 105%;
+    transform: scale(1.6);
+    border-radius: 0px;
+}
+
+.hp.lili>.lost {
+    background: url('official4.png');
+    box-shadow: none;
+    border: none;
+    background-size: 105% 105%;
+    transform: scale(1.6);
+    border-radius: 0px;
+    filter:grayscale(0);
+    -webkit-filter: grayscale(0);
+}
+
+#arena:not(.chess) .player[data-position='0']>.hp.lili{
+    top:95px;
+    left:40px;
+}
+
+.player .lili.hp{
+	top: 18px;
+	left: 15px;
+	width: 120px;
+	bottom: auto;
+	right: auto;
+	text-align: left;
+	transform: scale(1.2);
+                pointer-events: none;
+}
+
+#arena.slim_player .player .lili.hp{
+	left: 50px;
+	top: 155px;
+}
