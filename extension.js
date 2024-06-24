@@ -12,20 +12,24 @@ game.import("extension", function(lib, game, ui, get, ai, _status) {
                 //全局技能不能使用init标签
                 lib.skill._gezi_showlili = {
                     marktext: '灵',
+                    intro:{
+                        content:"mark",
+                    },
+                    /*
                     intro: {
                         content: function(storage, player, skill) {
                             return `东方project
         			灵力：${player.lili}/${player.maxlili}`;
                         },
                     },
-
+                    */
                     trigger: {
                         global: "gameStart",
                     },
                     priority: -2023,
                     forced: true,
                     content: function() {
-                        // alert("yes")
+                        player.setMark("_gezi_showlili",player.lili,false);
                         player.markSkill("_gezi_showlili");
                         //游戏开始时让标签显示
                     },
@@ -1191,6 +1195,7 @@ game.import("extension", function(lib, game, ui, get, ai, _status) {
                 if (player.lili > player.maxlili) player.lili = player.maxlili;
                 if (player.lili < 0) player.lili = 0;
                 player.updatelili();
+                player.setMark("_gezi_showlili",player.lili,false);
                 if (event.popup !== false) {
                     player.$damagepop(num, 'water'); // 这里改变的是颜色
                 }
@@ -24911,6 +24916,7 @@ game.import("extension", function(lib, game, ui, get, ai, _status) {
                         popup: false,
                         forced: true,
                         mark: true,
+                        priority: 2,
                         intro: {
                             content: function(storage, player) {
                                 var str = '';
@@ -32309,7 +32315,7 @@ game.import("extension", function(lib, game, ui, get, ai, _status) {
                     "scarlet_win": "红月",
                     "scarlet_win_info": "",
                     "gezi_wuye": "午夜",
-                    "gezi_wuye_info": "符卡技1(永续)<br><li>你的回合开始时，可以消耗一点灵力发动符卡技，直到你的下个回合开始。<br><li>效果：你成为攻击范围内的角色的带有伤害标签牌的目标时，你可以消耗一点灵力并指定一名该角色可以使用此牌的其他角色，将目标转移给其。",
+                    "gezi_wuye_info": "符卡技1(永续)<br><li>你的回合开始时，可以消耗一点灵力发动符卡技，直到你的下个回合开始。<br><li>效果：你成为攻击范围内的角色的带有伤害标签牌的目标时，你可以消耗一点灵力并指定一名可以使用此牌的其他角色，将目标转移给该角色。",
                     "gezi_wuye2": "午夜合唱",
                     "gezi_wuye2_info": "",
                     "gezi_jiehuo": "解惑",
