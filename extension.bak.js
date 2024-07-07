@@ -1,3 +1,9 @@
+game.import("extension", function(lib, game, ui, get, ai, _status) {
+    return {
+        name: "东方project",
+        editable: false,
+        content: function(config, pack) {
+
             //在十周年UI开启时不显示灵力
             //为兼容十周年UI，在十周年UI开启时用标记显示
 
