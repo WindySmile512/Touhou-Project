@@ -1,40 +1,46 @@
-.hp.lili>div:not(.lost) {
-    background: url('official1.png');
-    box-shadow: none;
-    border: none;
-    background-size: 105% 105%;
-    transform: scale(1.6);
-    border-radius: 0px;
-}
-
-.hp.lili>.lost {
-    background: url('official4.png');
-    box-shadow: none;
-    border: none;
-    background-size: 105% 105%;
-    transform: scale(1.6);
-    border-radius: 0px;
-    filter:grayscale(0);
-    -webkit-filter: grayscale(0);
-}
-
-#arena:not(.chess) .player[data-position='0']>.hp.lili{
-    top:95px;
-    left:40px;
-}
-
-.player .lili.hp{
-	top: 18px;
-	left: 15px;
-	width: 120px;
-	bottom: auto;
-	right: auto;
+.dfpjactcount {
+	top: 10px;    
+	left: 20px;
+    width: 15px;
+    height: 15px;
+	line-height: 14px;
 	text-align: left;
-	transform: scale(1.2);
-                pointer-events: none;
+	transform:rotate(-90deg);
+	flex-direction: column-reverse;
+	/*z-index: 200;*/
 }
-
-#arena.slim_player .player .lili.hp{
-	left: 50px;
-	top: 155px;
+.dfpjactcount.text {
+	top: 18px;
+}
+.dfpjactcount.textstyle{
+	font-family: 'xinwei'
+}
+.dfpjactcount>div {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	position: relative;
+	border-radius: 100%;
+	box-shadow: rgba(0,0,0,0.2) 1px -1px 2px inset,rgba(255,255,255,0.15) -1px 1px 5px inset;
+	position: relative;
+	filter: brightness(1.5);
+	-webkit-filter: brightness(1.5);
+	transition: all 0.5s;
+	background-repeat: no-repeat;
+}
+.dfpjactcount>div:not(.lost) {
+	background: url('official1.png');
+    box-shadow: none;
+    border: none;
+    background-size: 100% 100%;
+    transform: scale(1.4);
+    border-radius: 0px;
+}
+.dfpjactcount>.lost {
+	background: url('official4.png');
+    box-shadow: none;
+    border: none;
+    background-size: 100% 100%;
+    transform: scale(1.4);
+    border-radius: 0px;
 }
