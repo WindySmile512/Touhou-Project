@@ -21065,7 +21065,7 @@ export const ext_package = {
 					});
 					"step 1"
 					if (result.bool) {
-						result.targets[0].damage(player.lili);
+						result.targets[0].damage(player.lili,"thunder");
 					}
 					"step 2"
 					//player.maxlili = parseInt(lib.character[player.name][6]);
