@@ -1007,12 +1007,13 @@ export async function precontent(config, pack) {
 		}
 	}
 
-	lib.init.js(lib.assetURL + 'extension/东方project/source', 'KJ', function () {
+	lib.init.js(lib.assetURL + 'extension/东方project/source/module', 'KJ', function () {
 		KJZR(lib, game, ui, get, ai, _status);
 	}, function (e) {
 		alert(e);
 	});
-	lib.init.js(lib.assetURL + 'extension/东方project/source', 'KJ2', function () {
+	
+	lib.init.js(lib.assetURL + 'extension/东方project/source/module', 'KJ2', function () {
 		KJZR(lib, game, ui, get, ai, _status);
 	}, function (e) {
 		alert(e);
@@ -11231,4 +11232,5 @@ export async function precontent(config, pack) {
 		}
 	});
 	image: ['extension/东方project/stg.jpg'];
-}
+
+};
