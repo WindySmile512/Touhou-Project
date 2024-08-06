@@ -1105,7 +1105,14 @@ export async function content(config,pack){
 		trigger: { player: 'useCardToTargeted' },
 		filter: function (event, player) {
 			var info = get.info(event.card);
-			return info && info.enhance && event.player.lili > info.enhance;
+			if(!(info && info.enhance)) return;
+			
+			if(event.player.hasSkillTag("preventLoseLili")){
+			    //阻止灵力消耗，比如狂三的符卡技"gezi_shishi"
+			    return true;
+			}else{
+			    return event.player.lili > info.enhance;
+			}
 		},
 		content: function () {
 			'step 0'
@@ -1136,7 +1143,9 @@ export async function content(config,pack){
 			}
 		},
 		check: function (event, player) {
+		    if(player.hasSkillTag("noCostLili")) return true;
 			if (player.lili < 2) return false;
+			
 			var card = event.card;
 			if (card.name == 'gezi_danmakucraze') {
 				return (player.countCards('h') < player.hp) || player.countCards('h', { name: 'sha' }) || player.hp >= 2;
