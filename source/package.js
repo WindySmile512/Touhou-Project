@@ -22311,6 +22311,10 @@ export const ext_package = {
 						if (card.name == 'sha') return Infinity;
 					},
 				},
+				ai:{
+				    preventLoseLili:true,
+				    //阻止灵力消耗
+				},
 			},
 			"gezi_shishi2": {
 				audio: "ext:东方project:2",
